@@ -1,0 +1,1023 @@
+/* Reset básico e estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Fundo branco */
+    color: #00008B; /* Azul forte (DarkBlue) */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a, button {
+    color: #00008B; /* Azul forte */
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilos para o link "Pular para o conteúdo" */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+    background-color: #0000CD; /* MediumBlue para contraste */
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    z-index: 10000;
+}
+
+/* Cabeçalho */
+.site-header {
+    background-color: #ffffff;
+    padding: 15px 5%; /* Usar % para responsividade */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0; /* Linha sutil */
+    position: sticky; /* Faz o header ficar fixo no topo ao rolar */
+    top: 0;
+    z-index: 999; /* Para ficar acima do conteúdo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.site-header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-header .logo-container img {
+    height: 50px; /* Ajuste conforme necessário */
+    margin-right: 15px;
+}
+
+.site-header .logo-container .site-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+    color: #00008B;
+}
+
+
+/* Navegação Principal - Estilo Ninnahub */
+nav[aria-label="Navegação principal"] {
+    display: flex;
+    justify-content: center; /* Centraliza no header se não houver espaço no space-between */
+}
+
+nav ul.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul.main-menu > li {
+    position: relative; /* Para posicionamento do submenu */
+    margin: 0 5px; /* Espaçamento menor entre itens principais */
+}
+
+nav ul.main-menu > li > a,
+nav ul.main-menu > li > button.dropdown-toggle {
+    display: block;
+    padding: 15px 20px; /* Mais padding para área de clique maior */
+    font-size: 1.1em;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    position: relative; /* Para o pseudo-elemento ::after */
+    overflow: hidden; /* Para o efeito do ::after */
+    white-space: nowrap; /* Evita quebra de linha nos itens do menu */
+}
+
+/* Linha inferior estilo Ninnahub */
+nav ul.main-menu > li > a::after,
+nav ul.main-menu > li > button.dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0000CD; /* MediumBlue, um pouco mais claro para destaque */
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul.main-menu > li > a:hover::after,
+nav ul.main-menu > li > a:focus::after,
+nav ul.main-menu > li > button.dropdown-toggle:hover::after,
+nav ul.main-menu > li > button.dropdown-toggle:focus::after,
+nav ul.main-menu > li > button.dropdown-toggle[aria-expanded="true"]::after {
+    transform: translateX(0);
+}
+
+
+/* Estilos de foco visíveis */
+nav ul.main-menu > li > a:focus,
+nav ul.main-menu > li > button.dropdown-toggle:focus {
+    outline: 2px solid #0000CD;
+    outline-offset: -2px; /* Foco interno para não quebrar layout */
+    /* background-color: #e0e0ff; Não é necessário com o ::after */
+}
+
+/* Submenus */
+ul.submenu {
+    list-style: none;
+    padding: 10px 0; /* Padding vertical no container do submenu */
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Abaixo do item pai */
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    min-width: 220px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+ul.submenu[hidden] { /* JS vai usar 'hidden', mas CSS pode usar classes ou atributos para animação */
+    /* display: none; -- substituído pela animação com opacity e visibility */
+}
+
+nav ul.main-menu > li > button.dropdown-toggle[aria-expanded="true"] + ul.submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+ul.submenu li a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+    font-size: 1em;
+    color: #00008B;
+}
+
+ul.submenu li a:hover,
+ul.submenu li a:focus {
+    background-color: #eef2f7; /* Azul bem clarinho no hover */
+    color: #0000CD; /* Azul médio no hover */
+    outline: none; /* Se o link não tiver underline, o foco padrão do navegador pode ser suficiente */
+}
+ul.submenu li a:focus {
+    background-color: #dde5f0; /* Um pouco mais escuro no foco */
+    outline: 1px dashed #00008B; /* Adiciona um outline para clareza no foco */
+    outline-offset: -1px;
+}
+
+
+/* Indicador de dropdown (seta) */
+button.dropdown-toggle > span::after { /* Span para aplicar o estilo no texto, não no botão todo */
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+button.dropdown-toggle[aria-expanded="true"] > span::after {
+    transform: rotate(180deg);
+}
+
+/* Conteúdo principal */
+#main-content {
+    padding: 30px 5%;
+    min-height: 60vh;
+}
+
+#main-content h2, #main-content h3 {
+    color: #00008B;
+}
+#main-content section {
+    margin-bottom: 40px;
+    padding-top: 60px; /* Espaço para o header fixo */
+    margin-top: -60px; /* Compensa o padding-top para ancoragem correta */
+}
+
+/* Rodapé */
+.site-footer {
+    text-align: center;
+    padding: 25px 5%;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+    background-color: #f9f9f9;
+}
+
+/* Botão Voltar (para subpáginas) */
+.back-to-main {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #00008B;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.back-to-main:hover, .back-to-main:focus {
+    background-color: #0000CD; /* MediumBlue */
+    color: #ffffff;
+    outline: 2px solid #000050; /* Azul mais escuro para foco */
+    outline-offset: 2px;
+}
+
+/* Menu Hambúrguer para telas menores */
+.menu-toggle-btn {
+    display: none; /* Oculto por padrão */
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #00008B;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.menu-toggle-btn:focus {
+    outline: 2px solid #0000CD;
+    outline-offset: 2px;
+}
+
+
+/* Responsividade */
+@media (max-width: 992px) { /* Ajuste este breakpoint conforme necessário */
+    .site-header {
+        padding: 15px 3%;
+    }
+    .site-header .logo-container .site-title {
+        font-size: 1.5em;
+    }
+    nav ul.main-menu > li > a,
+    nav ul.main-menu > li > button.dropdown-toggle {
+        padding: 15px 10px; /* Menos padding horizontal */
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-btn {
+        display: block; /* Mostra o botão hambúrguer */
+        order: 1; /* Coloca o botão à direita se o logo estiver no centro */
+    }
+
+    nav[aria-label="Navegação principal"] {
+        order: 2; /* Ordem do flex container */
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-height: 0; /* Para animação de abertura */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    nav[aria-label="Navegação principal"].active {
+        max-height: 500px; /* Altura suficiente para o menu, ajuste se necessário */
+        border-top: 1px solid #f0f0f0;
+    }
+
+    nav ul.main-menu {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        width: 100%;
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    nav ul.main-menu > li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0; /* Divisor entre itens */
+    }
+     nav ul.main-menu > li:last-child {
+        border-bottom: none;
+    }
+
+
+    nav ul.main-menu > li > a,
+    nav ul.main-menu > li > button.dropdown-toggle {
+        width: 100%;
+        padding: 15px 20px; /* Padding consistente */
+        text-align: left; /* Alinha texto à esquerda */
+    }
+    
+    nav ul.main-menu > li > a::after,
+    nav ul.main-menu > li > button.dropdown-toggle::after {
+        display: none; /* Remove o efeito de linha no mobile, se desejar */
+    }
+
+    ul.submenu {
+        position: static; /* Submenu flui normalmente no mobile */
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        padding-left: 20px; /* Indentação para subitens */
+        background-color: #f9f9f9; /* Cor de fundo levemente diferente */
+        opacity: 1; /* Sempre visível quando o pai está expandido */
+        visibility: visible;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
+    nav ul.main-menu > li > button.dropdown-toggle[aria-expanded="true"] + ul.submenu {
+         max-height: 300px; /* Altura para o submenu expandir */
+    }
+
+    ul.submenu li a {
+        padding: 10px 20px;
+    }
+
+    /* Conteúdo principal precisa de mais padding-top por causa do header fixo */
+     #main-content section {
+        padding-top: 80px; /* Ajuste conforme a altura do seu header mobile */
+        margin-top: -80px;
+    }
+}
+
+/*revair adicionou por ultimo a parte acima, para voltar menu horizontal */
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const mainMenu = document.querySelector('nav[aria-label="Navegação principal"]');
+    const menuToggleButton = document.querySelector('.menu-toggle-btn');
+
+    // Função para fechar todos os submenus abertos, exceto um específico
+    function closeAllSubmenus(exceptThisButton = null) {
+        dropdownToggles.forEach(btn => {
+            if (btn !== exceptThisButton) {
+                const submenuId = btn.getAttribute('aria-controls');
+                const submenu = document.getElementById(submenuId);
+                if (submenu) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    submenu.setAttribute('hidden', '');
+                }
+            }
+        });
+    }  
+
+    dropdownToggles.forEach(toggle => {
+        const submenuId = toggle.getAttribute('aria-controls');
+        const submenu = document.getElementById(submenuId);
+        const submenuItems = submenu ? Array.from(submenu.querySelectorAll('a')) : [];
+
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault(); // Previne comportamento padrão se for um link
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Fecha outros submenus (especialmente útil em desktop)
+            if (!isExpanded && window.innerWidth > 768) { // Apenas em desktop
+                closeAllSubmenus(this);
+            }
+
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            submenu.toggleAttribute('hidden');
+
+            if (!isExpanded && submenuItems.length > 0 && window.innerWidth > 768) { // Foco no desktop
+                // Atraso pequeno para garantir que o submenu esteja visível antes do foco
+                setTimeout(() => submenuItems[0].focus(), 50);
+            } else if (isExpanded) {
+                // Se fechando, e o foco estava dentro, retorna ao botão
+                if (submenu.contains(document.activeElement)) {
+                    this.focus();
+                }
+            }
+        });
+
+        // Navegação por teclado dentro do submenu
+        if (submenuItems.length > 0) {
+            submenuItems.forEach((item, index) => {
+                item.addEventListener('keydown', function(event) {
+                    if (event.key === 'ArrowDown') {
+                        event.preventDefault();
+                        submenuItems[(index + 1) % submenuItems.length].focus();
+                    } else if (event.key === 'ArrowUp') {
+                        event.preventDefault();
+                        submenuItems[(index - 1 + submenuItems.length) % submenuItems.length].focus();
+                    } else if (event.key === 'Escape') {
+                        event.preventDefault();
+                        submenu.setAttribute('hidden', '');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        toggle.focus();
+                    } else if (event.key === 'Tab' && !event.shiftKey && index === submenuItems.length - 1) {
+                        // Opcional: fechar submenu ao sair com Tab do último item
+                        // setTimeout(() => { // Pequeno delay para permitir o foco natural
+                        //     if (!submenu.contains(document.activeElement)) {
+                        //         submenu.setAttribute('hidden', '');
+                        //         toggle.setAttribute('aria-expanded', 'false');
+                        //     }
+                        // }, 0);
+                    }
+                });
+            });
+        }
+
+        // Fechar submenu com a tecla Escape quando o foco está no botão toggle
+        toggle.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (this.getAttribute('aria-expanded') === 'true') {
+                    event.preventDefault();
+                    submenu.setAttribute('hidden', '');
+                    this.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+
+    // Fechar submenus se clicar fora deles (apenas em desktop)
+    document.addEventListener('click', function (event) {
+        if (window.innerWidth <= 768) return; // Não aplicar em mobile onde o comportamento é diferente
+
+        let isClickInsideMenu = false;
+        let clickedToggle = null;
+
+        dropdownToggles.forEach(toggle => {
+            const submenu = document.getElementById(toggle.getAttribute('aria-controls'));
+            if (toggle.contains(event.target) || (submenu && submenu.contains(event.target))) {
+                isClickInsideMenu = true;
+                if (toggle.contains(event.target)) clickedToggle = toggle;
+            }
+        });
+
+        if (!isClickInsideMenu) {
+            closeAllSubmenus();
+        } else if (clickedToggle && clickedToggle.getAttribute('aria-expanded') === 'true') {
+            // Se clicou em um toggle que já estava aberto, não feche os outros
+            // A lógica do toggle individual já cuidará disso
+        }
+    });
+
+    // Toggle do menu hambúrguer
+    if (menuToggleButton && mainMenu) {
+        menuToggleButton.setAttribute('aria-expanded', 'false');
+        menuToggleButton.setAttribute('aria-controls', 'main-menu-ul'); // ID da UL principal
+
+        menuToggleButton.addEventListener('click', function() {
+            const isExpanded = mainMenu.classList.contains('active');
+            mainMenu.classList.toggle('active');
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            if (!isExpanded) {
+                // Opcional: focar no primeiro item do menu ao abrir
+                const firstMenuItem = mainMenu.querySelector('ul.main-menu > li > a, ul.main-menu > li > button');
+                if (firstMenuItem) setTimeout(() => firstMenuItem.focus(), 50);
+            }
+        });
+    }
+});
+
+
+/* ... (Mantenha todo o CSS anterior para o menu e header) ... */
+
+/* Hero Section na Index */
+.hero-section {
+    background-color: #eef2f7; /* Um azul bem claro de fundo */
+    padding: 40px 5%;
+    display: flex;
+    flex-wrap: wrap; /* Para responsividade */
+    align-items: center;
+    gap: 30px; /* Espaço entre texto e vídeo */
+    border-bottom: 1px solid #dde5f0;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Para não espremer demais o texto */
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    color: #00008B;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Botão STARTUP na Index */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none; /* Para links estilizados como botões */
+}
+
+.btn-primary {
+    background-color: #0000CD; /* MediumBlue */
+    color: #ffffff;
+    border: 1px solid #0000CD;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #00008B; /* DarkBlue */
+    color: #ffffff;
+    transform: translateY(-2px);
+    outline: 2px solid #000050; /* Azul mais escuro para foco */
+    outline-offset: 2px;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Cinza */
+    color: #ffffff;
+    border: 1px solid #6c757d;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #5a6268;
+    color: #ffffff;
+    outline: 2px solid #343a40;
+    outline-offset: 2px;
+}
+
+
+/* Vídeo de Apresentação */
+.video-presentation-container {
+    flex: 1;
+    min-width: 300px; /* Para não espremer demais o vídeo */
+    text-align: center;
+}
+.video-presentation-container h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    position: relative;
+    height: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Seção de preview na index */
+#sobre-preview {
+    padding: 30px 0;
+    text-align: center;
+}
+#sobre-preview h3 {
+    margin-bottom: 10px;
+}
+
+/* Estilos para a página de formulário */
+.form-page-container {
+    max-width: 900px; /* Limita a largura do formulário */
+    margin: 0 auto; /* Centraliza */
+    padding: 20px 3%;
+}
+.form-page-container .page-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-page-container > p { /* Parágrafo introdutório */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+
+.startup-form fieldset {
+    border: 1px solid #00008B; /* Borda azul forte */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.startup-form legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #00008B;
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label,
+.form-group-title {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #00008B; /* Azul forte para labels */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para o width 100% */
+    font-size: 1em;
+    color: #333; /* Cor do texto dentro do input */
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0000CD; /* MediumBlue no foco */
+    box-shadow: 0 0 0 2px rgba(0, 0, 205, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.founder-block {
+    border: 1px dashed #ced4da;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.founder-block h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #00008B;
+}
+
+.checkbox-group div {
+    margin-bottom: 8px;
+    display: flex; /* Alinha checkbox e label */
+    align-items: center;
+}
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto; /* Tira o width 100% do checkbox */
+    accent-color: #0000CD; /* Cor do checkbox marcado */
+}
+.checkbox-group label {
+    margin-bottom: 0; /* Remove margem inferior do label do checkbox */
+    font-weight: normal; /* Labels de checkbox geralmente são normais */
+}
+
+.lgpd-clause p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.lgpd-clause strong {
+    color: #00008B;
+}
+
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+.form-actions .btn {
+    margin: 0 10px;
+}
+
+/* Responsividade adicional para formulários */
+@media (max-width: 600px) {
+    .hero-section {
+        flex-direction: column;
+    }
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-actions .btn {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Ajuste do header para nome do site com espaço */
+.site-header .logo-container .site-title {
+    font-size: 1.7em; /* Pode ajustar conforme o espaço disponível */
+    font-weight: bold;
+    margin: 0;
+    color: #00008B;
+}
+.site-header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-header .logo-container img {
+    height: 40px;  /* <<< AJUSTE ESTE VALOR PRIMEIRO */
+    width: auto;   /* <<< ADICIONE ISTO */
+    margin-right: 10px; /* Pode reduzir um pouco se o logo for menor */
+    display: block;
+}
+
+@media (max-width: 768px) {
+    /* ... (outros estilos mobile do header) ... */
+    .site-header .logo-container img {
+        height: 35px; /* <<< AJUSTE PARA MOBILE */
+        width: auto;
+    }
+    .site-header .logo-container .site-title {
+        font-size: 1.4em; /* Se o logo diminuir, talvez o título também precise */
+    }
+    /* ... */
+}
+
+@media (max-width: 992px) {
+    .site-header .logo-container .site-title {
+        font-size: 1.4em;
+    }
+}
+@media (max-width: 400px) { /* Para telas bem pequenas */
+    .site-header .logo-container .site-title {
+        font-size: 1.2em;
+    }
+    .site-header .logo-container img {
+        height: 30px; /* Experimente este valor ou menor, como 40px ou 35px */
+        width: auto;  /* IMPORTANTE: Adicione esta linha */
+    }
+}
+/* ... (todo o CSS anterior) ... */
+
+/* Estilos para seções de conteúdo genéricas (como a página Sobre) */
+.content-section {
+    max-width: 850px; /* Limita a largura para melhor legibilidade */
+    margin: 30px auto; /* Centraliza e adiciona margem vertical */
+    padding: 20px 3%;  /* Espaçamento interno */
+    background-color: #fff; /* Garante fundo branco caso haja algum global diferente */
+}
+
+.content-section h1,
+.content-section h2 { /* Se houver subtítulos H2 */
+    color: #00008B; /* Azul forte para títulos */
+    margin-bottom: 25px;
+    text-align: center; /* Centraliza o título principal da página */
+}
+
+.text-content p {
+    font-size: 1.1em; /* Tamanho de fonte confortável para leitura */
+    line-height: 1.7; /* Espaçamento entre linhas generoso */
+    margin-bottom: 20px; /* Espaço entre parágrafos */
+    color: #333; /* Cor de texto um pouco mais suave que o azul forte para leitura longa */
+    text-align: justify; /* Justifica o texto para um visual mais formal */
+                        /* Considere text-align: left; se preferir um alinhamento mais natural para web */
+}
+
+.text-content p:last-child {
+    margin-bottom: 0; /* Remove margem do último parágrafo antes do botão "voltar" */
+}
+
+.highlight-text {
+    font-weight: 500; /* Levemente mais forte */
+    color: #00008B; /* Destaca em azul forte */
+    font-style: italic; /* Opcional: para dar mais ênfase */
+    padding: 15px;
+    background-color: #eef2f7; /* Fundo azul bem claro para destaque */
+    border-left: 4px solid #0000CD; /* Linha lateral azul média */
+    border-radius: 4px;
+    margin-top: 25px !important; /* Garante espaço acima se for o último */
+    margin-bottom: 25px !important; /* Garante espaço abaixo */
+}
+
+/* Ajustes para o botão "Voltar" dentro dessas seções */
+.content-section .back-to-main {
+    display: block; /* Para ocupar a largura e permitir centralização */
+    width: fit-content; /* Ajusta a largura ao conteúdo */
+    margin: 30px auto 0 auto; /* Centraliza e adiciona margem superior */
+}
+
+
+/* Responsividade para a seção de conteúdo */
+@media (max-width: 768px) {
+    .content-section h1 {
+        font-size: 1.8em; /* Título um pouco menor em telas pequenas */
+    }
+    .text-content p {
+        font-size: 1em; /* Texto principal um pouco menor */
+        text-align: left; /* Em telas menores, justificado pode ficar ruim */
+    }
+    .highlight-text {
+        padding: 10px;
+    }
+}
+/* ... (todo o CSS anterior) ... */
+
+/* Estilos para a Página de Parceiros */
+.partners-page .intro-parceiros {
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    color: #333; /* Cor mais suave para texto introdutório */
+    max-width: 700px; /* Limita largura do texto introdutório */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partners-grid {
+    display: grid;
+    /* 
+       Cria colunas responsivas:
+       - Tenta encaixar o máximo de colunas com largura mínima de 180px.
+       - Cada coluna ocupará uma fração igual do espaço disponível (1fr).
+    */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px; /* Espaçamento entre os logos */
+    padding: 20px 0; /* Espaçamento vertical em torno da grade */
+}
+
+.partner-item {
+    display: flex; /* Para centralizar a imagem dentro do item */
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9; /* Um fundo muito sutil para cada item */
+    border: 1px solid #e0e0e0; /* Borda clara */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px;
+    min-height: 120px; /* Altura mínima para garantir algum alinhamento visual */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.partner-item:hover,
+.partner-item:focus-within { /* Estilo quando um elemento dentro dele (como um link) está focado */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.partner-item img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    max-height: 80px; /* Limita a altura máxima da logo para uniformidade */
+    height: auto;     /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que toda a imagem seja visível, sem cortar, dentro das dimensões */
+}
+
+/* Se as logos forem links, adicione um estilo de foco explícito para o link */
+.partner-item a:focus {
+    outline: 2px solid #0000CD; /* Azul médio para o foco */
+    outline-offset: 3px; /* Espaço entre o item e o outline */
+    border-radius: 6px; /* Para o outline acompanhar o border-radius do item se o link preencher */
+}
+.partner-item a { /* Para remover o sublinhado padrão se for link */
+    display: block; /* Faz o link ocupar o espaço do item */
+    text-decoration: none;
+}
+
+
+/* Responsividade para a grade de parceiros */
+@media (max-width: 480px) {
+    .partners-grid {
+        /* Em telas muito pequenas, talvez uma ou duas colunas */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    .partner-item {
+        padding: 15px;
+        min-height: 100px;
+    }
+    .partner-item img {
+        max-height: 60px;
+    }
+}
+/* relativo ao site da Equipe */
+/* ... (todo o CSS anterior) ... */
+
+/* Estilos para a Página da Equipe */
+.team-page .intro-equipe {
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 35px;
+    color: #333;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os membros */
+    padding: 20px 0;
+}
+
+.team-member {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Para garantir que a imagem não vaze se tiver cantos arredondados diferentes */
+    text-align: center;
+    padding-bottom: 20px; /* Espaço abaixo das informações */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.team-member:hover,
+.team-member:focus { /* Estilo de foco para o card inteiro */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    outline: 2px solid #0000CD; /* Outline para o card focado */
+    outline-offset: 2px;
+}
+
+.team-member img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    height: 260px; /* Altura fixa para as fotos, ajuste conforme necessário */
+    object-fit: cover; /* Cobre a área, pode cortar partes da imagem para preencher */
+                      /* Alternativa: object-fit: contain; (mostra toda a imagem, pode deixar espaços) */
+    object-position: center top; /* Tenta centralizar o rosto se 'cover' for usado */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin-bottom: 15px; /* Espaço entre a foto e as informações */
+}
+
+.member-info {
+    padding: 0 15px; /* Espaçamento lateral para as infos */
+}
+
+.member-name {
+    font-size: 1.3em;
+    color: #00008B; /* Azul forte para o nome */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-size: 1em;
+    color: #555; /* Cinza escuro para o cargo */
+    margin-top: 0;
+    font-style: italic;
+}
+
+/* Responsividade para a grade da equipe */
+@media (max-width: 576px) { /* Breakpoint para telas menores */
+    .team-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        gap: 20px;
+    }
+    .team-member img {
+        height: 280px; /* Pode aumentar um pouco a altura se for 1 coluna */
+    }
+}
+
+/* Esta parte abaixo é responsável por deixar a  imagem dentro da pagina eocossistema centralizada e com 
+responsividade */
+
+.image-container {
+    text-align: center; /* Centraliza o texto da legenda */
+    margin: 2.5rem 0; /* Adiciona um espaço vertical generoso */
+}
+
+.image-container img {
+    display: block; /* Essencial para que a margem automática funcione */
+    margin: 0 auto 0.5rem auto; /* Centraliza a imagem horizontalmente e adiciona uma pequena margem inferior */
+    max-width: 750px; /* Define um tamanho máximo para a imagem em telas grandes */
+    width: 100%;      /* Faz a imagem ser responsiva e se ajustar a telas menores */
+    height: auto;     /* Mantém a proporção da imagem ao redimensionar */
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
