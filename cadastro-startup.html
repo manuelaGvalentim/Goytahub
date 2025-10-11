@@ -27,7 +27,28 @@
                     </ul>
                 </li>
                 <li>
-                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>
+                  <!--  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>-->
+                    
+     
+                  
+
+
+
+
+<button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>
+<ul id="startups-submenu" class="submenu" hidden>
+    <li><a href="lista_startups.html">Startups</a></li>
+    <li><a href="lista_empresas.html">Empresas</a></li>
+</ul>
+
+
+
+
+
+
+
+                    
+
                     <!--<ul id="startups-submenu" class="submenu" hidden>
                         <li><a href="cadastro-startup.html">Cadastro de Startup</a></li>
                     </ul> -->
@@ -51,7 +72,9 @@
         <h2 class="page-title">Cadastro de Nova Startup</h2>
         <p>Preencha o formulário abaixo para registrar sua startup em nossa plataforma.</p>
 
-        <form action="#" method="POST" class="startup-form" id="startupRegistrationForm">
+       <!--<form action="#" method="POST" class="startup-form" id="startupRegistrationForm">--> 
+       <!--<form action="mostrar.html" method="get" autocomplete="on">--> 
+   <form id="startupForm" method="get" autocomplete="on">
             <fieldset>
                 <legend>Dados da Startup</legend>
                 <div class="form-group">
@@ -257,6 +280,52 @@
                 <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
             </div>
         </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+document.getElementById("startupForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  
+  let data = {
+    nome: document.getElementById("startupName").value,
+    classificacao: document.getElementById("startupClassification").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbzpLWLnsVjoEcXLTo87c-PVYQsc4lU4M4ksv0Ux4i9jCeorEo3pEuAA4rEemtpjA3XJFw/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(r => {
+    if(r.status === "ok"){
+      window.location.href = "lista_startups.html"; // redireciona
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <a href="index.html" class="back-to-main">Voltar à página principal</a>
     </main>

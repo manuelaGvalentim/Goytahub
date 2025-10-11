@@ -1021,3 +1021,105 @@ responsividade */
     color: #666;
     font-style: italic;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* 
+   Estilos para lista_startups.html
+   */
+
+.startups-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px 3%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.startups-section h1 {
+    text-align: center;
+    color: #1f4e79;
+    margin-bottom: 25px;
+}
+
+.startups-box {
+    border: 2px solid #1f4e79;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.startups-box legend {
+    font-weight: bold;
+    color: #1f4e79;
+    padding: 0 10px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-bar input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filter-bar button {
+    background-color: #1f4e79;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-bar button:hover {
+    background-color: #163c5a;
+}
+
+.startups-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.startups-table th, 
+.startups-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.startups-table th {
+    background-color: #1f4e79;
+    color: #fff;
+}
+
+.startups-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.back-to-main {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1f4e79;
+    text-decoration: none;
+}
+
+.back-to-main:hover {
+    text-decoration: underline;
+}
