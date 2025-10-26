@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Startup - GOYTA HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+        <div class="logo-container">
+             <a href="index.html" aria-label="Página inicial do GOYTA HUB">
+                <img src="images/goyta-hub-logo.png" alt="Logotipo GOYTA HUB: um foguete branco decolando dentro de um marcador de mapa azul.">
+            </a>
+            <a href="index.html" class="site-title-link" aria-label="Página inicial do GOYTA HUB"><h1 class="site-title">GOYTA HUB</h1></a>
+        </div>
+        <button class="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation">&#9776;</button>
+        <nav id="main-navigation" aria-label="Navegação principal">
+            <ul class="main-menu" id="main-menu-ul">
+                 <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="sobre-submenu"><span>Sobre</span></button>
+                    <ul id="sobre-submenu" class="submenu" hidden>
+                        <li><a href="sobre-institucional.html">Sobre</a></li>
+                        <li><a href="ecossistema.html">Ecossistema</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <!--  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>-->
+                    
+     
+                  
+
+
+
+
+<button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>
+<ul id="startups-submenu" class="submenu" hidden>
+    <li><a href="tipo-startups.html">Startups</a></li>
+    <li><a href="lista_empresas.html">Empresas</a></li>
+</ul>
+
+
+
+
+
+
+
+                    
+
+                    <!--<ul id="startups-submenu" class="submenu" hidden>
+                        <li><a href="cadastro-startup.html">Cadastro de Startup</a></li>
+                    </ul> -->
+                </li>  
+                <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="eventos-submenu"><span>Eventos</span></button>
+                    <ul id="eventos-submenu" class="submenu" hidden>
+                        <li><a href="eventos-locais.html">Local</a></li>
+                        <li><a href="eventos-regionais.html">Regional</a></li>
+                    </ul>
+                </li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="parceiros.html">Parceiros</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <main id="main-content" class="form-page-container">
+        <h2 class="page-title">Cadastro de Nova Empresa</h2>
+        <p>Preencha o formulário abaixo para registrar sua empresa em nossa plataforma.</p>
+
+       <!--<form action="#" method="POST" class="startup-form" id="startupRegistrationForm">--> 
+       <!--<form action="mostrar.html" method="get" autocomplete="on">--> 
+
+
+    <form id="empresaForm" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Dados da Empresa</legend>
+            <div class="form-group">
+                <label for="empresaName">Nome da Empresa:*</label>
+                <input type="text" id="empresaName" name="empresaName" required>
+            </div>
+            <div class="form-group">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" placeholder="XX.XXX.XXX/XXXX-XX">
+            </div>
+            <div class="form-group">
+                <label for="foundationDate">Data de Fundação:</label>
+                <input type="date" id="foundationDate" name="foundationDate">
+            </div>
+            <div class="form-group">
+                <label for="logo">Logo (PNG, JPG - máx 2MB):</label>
+                <input type="file" id="logo" name="logo" accept="image/png, image/jpeg">
+            </div>
+            <div class="form-group">
+                <label for="videoLink">Link do Vídeo de Apresentação (YouTube, Vimeo, etc.):</label>
+                <input type="url" id="videoLink" name="videoLink" placeholder="https://">
+            </div>
+            <div class="form-group">
+                <label for="pitch">Pitch da Empresa (breve descrição):*</label>
+                <textarea id="pitch" name="pitch" rows="5" required></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Fundador(es)</legend>
+            <div class="founder-block">
+                <h4>Fundador 1</h4>
+                <div class="form-group">
+                    <label for="founder1Name">Nome Completo:*</label>
+                    <input type="text" id="founder1Name" name="founder1Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="founder1Phone">Telefone:*</label>
+                    <input type="tel" id="founder1Phone" name="founder1Phone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="founder1Email">E-mail:*</label>
+                    <input type="email" id="founder1Email" name="founder1Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="founder1Linkedin">LinkedIn:</label>
+                    <input type="url" id="founder1Linkedin" name="founder1Linkedin" placeholder="https://linkedin.com/in/...">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes da Operação</legend>
+            <div class="form-group">
+                <label for="numCollaborators">Número de Colaboradores:*</label>
+                <input type="number" id="numCollaborators" name="numCollaborators" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="empresaStage">Estágio da Empresa:*</label>
+                <select id="empresaStage" name="empresaStage" required>
+                    <option value="">Selecione o estágio</option>
+                    <option value="ideacao">Ideação</option>
+                    <option value="validacao">Validação</option>
+                    <option value="tracao">Tração</option>
+                    <option value="crescimento">Crescimento</option>
+                    <option value="escala">Escala</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mainProductService">Produto e/ou Serviço Principal:*</label>
+                <textarea id="mainProductService" name="mainProductService" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado da Empresa:*</label>
+                <select id="estado" name="estado" required>
+                    <option value="" disabled selected>Carregando estados...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="municipio">Município da Empresa:*</label>
+                <select id="municipio" name="municipio" required disabled>
+                    <option value="">Primeiro, selecione um estado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="targetAudience">Público-alvo:*</label>
+                <select id="targetAudience" name="targetAudience" required>
+                    <option value="">Selecione o público</option>
+                    <option value="b2b">B2B</option>
+                    <option value="b2c">B2C</option>
+                    <option value="b2g">B2G</option>
+                    <option value="outro_publico">Outro</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Presença Online</legend>
+            <div class="form-group">
+                <label for="website">Site da Empresa:</label>
+                <input type="url" id="website" name="website" placeholder="https://">
+            </div>
+            <div class="form-group">
+                <label for="socialMedia">Redes Sociais (principal):</label>
+                <input type="url" id="socialMedia" name="socialMedia" placeholder="https://instagram.com/...">
+            </div>
+            <div class="form-group">
+                <label for="linkedinEmpresa">LinkedIn da Empresa:</label>
+                <input type="url" id="linkedinEmpresa" name="linkedinEmpresa" placeholder="https://linkedin.com/company/...">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Classificação e Vínculos</legend>
+            <div class="form-group">
+                <label for="empresaCategoria">Categoria da Empresa:*</label>
+                <select id="empresaCategoria" name="empresaCategoria" required>
+                    <option value="">Selecione a categoria</option>
+                    <option value="industria">1 - Indústria - Empresas que produzem bens materiais, como alimentos, automóveis e têxteis.</option>
+                    <option value="comercio">2 - Comércio - Empresas que compram e revendem produtos, como lojas, mercados e distribuidoras.</option>
+                    <option value="servicos">3 - Serviços - Empresas que prestam serviços, como contabilidade, consultoria e limpeza.</option>
+                    
+                </select>
+
+
+
+
+
+
+
+
+                <label for="empresasetor">Setor da Empresa*</label>
+                <select id="empresasetor" name="empresasetor" required>
+                    <option value="">Selecione o Setor</option>
+                    <option value="tecnologia">1 - Tecnologia da Informação - Empresas que desenvolvem sistemas, softwares e infraestrutura digital.</option>
+                    <option value="construcao">2 - Construção Civil - Empresas que atuam em obras, reformas e engenharia.</option>
+                    <option value="educacao">3 - Educação - Escolas, universidades e cursos técnicos.</option>
+                    <option value="saude">4 - Saúde - Hospitais, clínicas, laboratórios e farmácias.</option>
+                    <option value="agropecuaria">5 - Agropecuária - Empresas do agronegócio, produção agrícola e pecuária.</option>
+                    <option value="logistica">6 - Transporte e Logística - Empresas de transporte, armazenamento e entregas.</option>
+                    <option value="energia">7 - Energia e Meio Ambiente - Empresas de energia elétrica, solar e gestão ambiental.</option>
+                    <option value="turismo">8 - Turismo e Hotelaria - Empresas que atuam com viagens, hospedagem e lazer.</option>
+                    <option value="alimenticio">9 - Setor Alimentício - Restaurantes, lanchonetes, padarias e indústrias de alimentos.</option>
+                    <option value="financeiro">10 - Setor Financeiro - Bancos, corretoras e cooperativas de crédito.</option>
+                    <option value="moda">11 - Moda e Beleza - Empresas de vestuário, cosméticos e estética.</option>
+                    <option value="comunicacao">12 - Comunicação e Marketing - Agências de publicidade, jornalismo e mídia digital.</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p class="form-group-title">Vinculada a habitat e/ou programa de inovação?</p>
+                <div class="checkbox-group">
+                    <div><input type="checkbox" id="tecIncubadora" name="vinculos[]" value="tec_incubadora"><label for="tecIncubadora">Tec Incubadora</label></div>
+                    <div><input type="checkbox" id="poloIFF" name="vinculos[]" value="polo_iff"><label for="poloIFF">Pólo de Inovação do IFF</label></div>
+                    <div><input type="checkbox" id="empresaCampos" name="vinculos[]" value="empresa_campos"><label for="empresaCampos">Empresa Campos</label></div>
+                    <div><input type="checkbox" id="economiaCriativa" name="vinculos[]" value="economia_criativa"><label for="economiaCriativa">Economia Criativa</label></div>
+                    <div><input type="checkbox" id="faperj" name="vinculos[]" value="faperj"><label for="faperj">FAPERJ</label></div>
+                    <div><input type="checkbox" id="cnpq" name="vinculos[]" value="cnpq"><label for="cnpq">CNPq</label></div>
+                    <div><input type="checkbox" id="fundacaoWadhwani" name="vinculos[]" value="fundacao_wadhwani"><label for="fundacaoWadhwani">Fundação Wadhwani</label></div>
+                    <div><input type="checkbox" id="sebrae" name="vinculos[]" value="sebrae"><label for="sebrae">SEBRAE</label></div>
+                    <div><input type="checkbox" id="innovativa" name="vinculos[]" value="innovativa"><label for="innovativa">Innovativa</label></div>
+                    <div><input type="checkbox" id="outroVinculo" name="vinculos[]" value="outro_vinculo"><label for="outroVinculo">Outro</label></div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Termos e Condições</legend>
+            <div class="form-group lgpd-clause">
+                <p><strong>Cláusula LGPD (Lei Geral de Proteção de Dados):</strong></p>
+                <p>Ao submeter este formulário, você concorda que os dados fornecidos serão coletados e processados pelo GOYTA HUB para fins de cadastro na plataforma, comunicação sobre eventos, oportunidades e notícias relevantes ao ecossistema de inovação. Seus dados serão tratados com confidencialidade e segurança, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Você poderá solicitar a alteração ou exclusão dos seus dados a qualquer momento, entrando em contato conosco.</p>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="lgpdConsent" name="lgpdConsent" value="aceito" required>
+                        <label for="lgpdConsent">Li e concordo com os termos e a Cláusula LGPD.*</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+            <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+        </div>
+    </form>
+
+
+
+
+   <script>
+document.getElementById("empresaForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  
+  const data = {
+    nomeempresa: document.getElementById("empresaName").value,
+    setorempresa: document.getElementById("empresasetor").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbzW46wDBBX9nK4Z5cDSDO9C6Mr3QWPaBE9XYEeK1NbfCsBaXM4dtxHEIr18wt69LUm1Vg/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },  // 🔹 Adiciona isto!
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(r => {
+    if (r.status === "ok") {
+      alert("Empresa cadastrada com sucesso!");
+      window.location.href = "lista_startups.html";
+    } else {
+      alert("Erro ao cadastrar empresa. Tente novamente.");
+      console.log(r);
+    }
+  })
+  .catch(err => {
+    console.error("Erro:", err);
+    alert("Falha na comunicação com o servidor.");
+  });
+});
+</script>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+        <a href="index.html" class="back-to-main">Voltar à página principal</a>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> GOYTA HUB. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Adicionar JS para validação ou funcionalidade extra do formulário aqui, se necessário.
+    </script>
+</body>
+</html>

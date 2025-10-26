@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Startup - GOYTA HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+
+
+  <style>
+    .busca-container {
+      max-width: 700px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .busca-container input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .submenu-tipos {
+      display: none;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      border-radius: 8px;
+    }
+
+    .submenu-tipos ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .submenu-tipos li {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .submenu-tipos li:hover {
+      background-color: #e0e0e0;
+    }
+
+    table {
+      width: 60%;
+      margin: 30px auto;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+ 
+
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+        <div class="logo-container">
+             <a href="index.html" aria-label="Página inicial do GOYTA HUB">
+                <img src="images/goyta-hub-logo.png" alt="Logotipo GOYTA HUB: um foguete branco decolando dentro de um marcador de mapa azul.">
+            </a>
+            <a href="index.html" class="site-title-link" aria-label="Página inicial do GOYTA HUB"><h1 class="site-title">GOYTA HUB</h1></a>
+        </div>
+        <button class="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation">&#9776;</button>
+        <nav id="main-navigation" aria-label="Navegação principal">
+            <ul class="main-menu" id="main-menu-ul">
+                 <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="sobre-submenu"><span>Sobre</span></button>
+                    <ul id="sobre-submenu" class="submenu" hidden>
+                        <li><a href="sobre-institucional.html">Sobre</a></li>
+                        <li><a href="ecossistema.html">Ecossistema</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <!--  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>-->
+                    
+     
+                  
+
+
+
+
+<button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>
+<ul id="startups-submenu" class="submenu" hidden>
+    <li><a href="tipo-startups.html">Startups</a></li>
+    <li><a href="lista_empresas.html">Empresas</a></li>
+</ul>
+
+
+
+
+
+
+
+                    
+
+                    <!--<ul id="startups-submenu" class="submenu" hidden>
+                        <li><a href="cadastro-startup.html">Cadastro de Startup</a></li>
+                    </ul> -->
+                </li>  
+                <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="eventos-submenu"><span>Eventos</span></button>
+                    <ul id="eventos-submenu" class="submenu" hidden>
+                        <li><a href="eventos-locais.html">Local</a></li>
+                        <li><a href="eventos-regionais.html">Regional</a></li>
+                    </ul>
+                </li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="parceiros.html">Parceiros</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+   <!-- <main id="main-content"></main>
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>-->
+
+    
+
+    
+
+
+   
+
+        
+
+
+
+
+  <main id="main-content">
+    <section class="busca-container">
+      <h2>Startups por Categoria</h2>
+      <input type="text" id="buscaStartup" placeholder="Clique para escolher o tipo de startup..." readonly>
+
+      <div class="submenu-tipos" id="submenuTipos">
+        <ul>
+          <li data-tipo="fintech">Fintech</li>
+          <li data-tipo="edtech">Edtech</li>
+          <li data-tipo="healthtech">Healthtech</li>
+          <li data-tipo="hrtech">HR Tech</li>
+          <li data-tipo="foodtech">Foodtech</li>
+          <li data-tipo="lawtech">Lawtech</li>
+          <li data-tipo="proptech">Proptech</li>
+          <li data-tipo="agrotech">Agrotech</li>
+          <li data-tipo="energytech">Energytech</li>
+          <li data-tipo="cleantech">Cleantech</li>
+          <li data-tipo="biotech">Biotech</li>
+          <li data-tipo="construtech">Construtech</li>
+          <li data-tipo="insurtech">Insurtech</li>
+          <li data-tipo="sporttech">Sporttech</li>
+          <li data-tipo="govtech">Govtech</li>
+          <li data-tipo="retailtech">Retailtech</li>
+          <li data-tipo="adtech">Adtech</li>
+          <li data-tipo="nanotech">Nanotech</li>
+          <li data-tipo="funtech">Funtech</li>
+          <li data-tipo="fashiontech">Fashiontech</li>
+          <li data-tipo="indtech">Indtech</li>
+          <li data-tipo="regtech">Regtech</li>
+        </ul>
+      </div>
+
+      <button id="filtro">Filtrar</button>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="resultado">
+      <table>
+        <thead>
+          <tr><th>Nome da Startup</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <script>
+    const campoBusca = document.getElementById("buscaStartup");
+    const submenu = document.getElementById("submenuTipos");
+    const tbody = document.getElementById("tbody");
+    const filtro = document.getElementById("filtro");
+    let startups = [];
+
+    // Exibe ou oculta o submenu quando clica na barra
+    campoBusca.addEventListener("click", () => {
+      submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Quando clica num tipo de startup, preenche o campo de busca
+    submenu.querySelectorAll("li").forEach(item => {
+      item.addEventListener("click", () => {
+        campoBusca.value = item.textContent;
+        submenu.style.display = "none";
+      });
+    });
+
+    // Busca os dados da planilha
+    fetch("https://script.google.com/macros/s/AKfycbzpLWLnsVjoEcXLTo87c-PVYQsc4lU4M4ksv0Ux4i9jCeorEo3pEuAA4rEemtpjA3XJFw/exec")
+      .then(res => res.json())
+      .then(data => {
+        startups = data.slice(1); // ignora cabeçalho
+      })
+      .catch(err => console.error("Erro ao carregar dados:", err));
+
+    // Função para exibir startups filtradas
+    function exibirLista(lista) {
+      tbody.innerHTML = "";
+      if (lista.length === 0) {
+        tbody.innerHTML = "<tr><td>Nenhuma startup encontrada.</td></tr>";
+      } else {
+        lista.forEach(row => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${row[0]}</td>`;
+          tbody.appendChild(tr);
+        });
+      }
+    }
+
+    // Filtro ao clicar no botão ou pressionar Enter
+    filtro.addEventListener("click", filtrar);
+    campoBusca.addEventListener("keypress", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        filtrar();
+      }
+    });
+
+    function filtrar() {
+      const termo = campoBusca.value.toLowerCase();
+      const filtrado = startups.filter(r => r[1].toLowerCase().includes(termo));
+      exibirLista(filtrado);
+    }
+  </script>
+
+
+
+
+
+
+
+<script>
+  // Toggle básico dos submenus
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    const target = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (target) {
+        if (target.hasAttribute('hidden')) target.removeAttribute('hidden');
+        else target.setAttribute('hidden', '');
+      }
+    });
+  });
+
+  // Fecha menus ao clicar fora
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const target = document.getElementById(btn.getAttribute('aria-controls'));
+      if (target) target.setAttribute('hidden', '');
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
