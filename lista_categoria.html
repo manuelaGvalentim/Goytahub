@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Startup - GOYTA HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+        <div class="logo-container">
+             <a href="index.html" aria-label="Página inicial do GOYTA HUB">
+                <img src="images/goyta-hub-logo.png" alt="Logotipo GOYTA HUB: um foguete branco decolando dentro de um marcador de mapa azul.">
+            </a>
+            <a href="index.html" class="site-title-link" aria-label="Página inicial do GOYTA HUB"><h1 class="site-title">GOYTA HUB</h1></a>
+        </div>
+        <button class="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation">&#9776;</button>
+        <nav id="main-navigation" aria-label="Navegação principal">
+            <ul class="main-menu" id="main-menu-ul">
+                 <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="sobre-submenu"><span>Sobre</span></button>
+                    <ul id="sobre-submenu" class="submenu" hidden>
+                        <li><a href="sobre-institucional.html">Sobre</a></li>
+                        <li><a href="ecossistema.html">Ecossistema</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <!--  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>-->
+                    
+     
+                  
+
+
+
+
+<button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="startups-submenu"><span>Startup</span></button>
+<ul id="startups-submenu" class="submenu" hidden>
+    <li><a href="tipo-startups.html">Startups</a></li>
+    <li><a href="lista_empresas.html">Empresas</a></li>
+</ul>
+
+
+
+
+
+
+                    
+
+                    <!--<ul id="startups-submenu" class="submenu" hidden>
+                        <li><a href="cadastro-startup.html">Cadastro de Startup</a></li>
+                    </ul> -->
+                </li>  
+                <li>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="eventos-submenu"><span>Eventos</span></button>
+                    <ul id="eventos-submenu" class="submenu" hidden>
+                        <li><a href="eventos-locais.html">Local</a></li>
+                        <li><a href="eventos-regionais.html">Regional</a></li>
+                    </ul>
+                </li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="parceiros.html">Parceiros</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+
+
+<title>Startups da Categoria</title>
+
+<style>
+
+/* BASE */
+
+body{
+font-family:Segoe UI,Arial,sans-serif;
+background:#f4f7fb;
+margin:0;
+padding:40px;
+}
+
+h1{
+text-align:center;
+color:#0a2a66;
+margin-bottom:10px;
+}
+
+.subtitulo{
+text-align:center;
+margin-bottom:30px;
+color:#555;
+}
+
+
+/* BUSCA */
+
+.busca-container{
+max-width:500px;
+margin:0 auto 40px auto;
+}
+
+#busca{
+width:100%;
+padding:12px 15px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+
+/* GRID */
+
+.grid-startups{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+max-width:1100px;
+margin:auto;
+
+}
+
+
+/* CARD */
+
+.card{
+
+background:linear-gradient(135deg,#1f4e79,#2c6fb1);
+
+padding:30px;
+
+border-radius:14px;
+
+color:white;
+
+cursor:pointer;
+
+text-align:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+transition:all .3s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* HOVER */
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:0 18px 40px rgba(0,0,0,.35);
+
+}
+
+
+/* ANIMAÇÃO DE BRILHO */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.4),
+transparent
+);
+
+transition:.6s;
+
+}
+
+.card:hover::after{
+
+left:100%;
+
+}
+
+
+/* TEXTO */
+
+.card h3{
+
+margin:0 0 15px 0;
+font-size:1.4em;
+color:white;
+
+}
+
+.card p{
+
+margin:0;
+font-size:.95em;
+opacity:.9;
+color:white;
+
+}
+
+
+/* BOTÃO VOLTAR */
+
+.voltar{
+
+display:block;
+
+width:220px;
+
+margin:40px auto;
+
+text-align:center;
+
+padding:12px;
+
+border-radius:8px;
+
+background:#1f4e79;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<h1 id="tituloCategoria">Startups</h1>
+
+<p class="subtitulo">Empresas cadastradas nesta categoria</p>
+
+
+<div class="busca-container">
+<input type="text" id="busca" placeholder="Pesquisar startup...">
+</div>
+
+
+<div class="grid-startups" id="listaStartups">
+
+</div>
+
+
+<a class="voltar" href="categorias_startups.html">Voltar para categorias</a>
+
+
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search)
+const categoria = urlParams.get("categoria")
+
+document.getElementById("tituloCategoria").innerText =
+"Startups - " + categoria
+
+
+let todasStartups = []
+
+
+fetch("https://script.google.com/macros/s/AKfycbzpLWLnsVjoEcXLTo87c-PVYQsc4lU4M4ksv0Ux4i9jCeorEo3pEuAA4rEemtpjA3XJFw/exec")
+
+.then(res => res.json())
+
+.then(data => {
+
+let linhas = data.slice(1)
+
+linhas.forEach(linha => {
+
+let nome = linha[0]
+let cat = linha[1]
+
+if(cat && cat.toLowerCase() === categoria.toLowerCase()){
+
+todasStartups.push(nome)
+
+}
+
+})
+
+mostrarStartups(todasStartups)
+
+})
+
+
+function mostrarStartups(lista){
+
+let container = document.getElementById("listaStartups")
+
+container.innerHTML = ""
+
+lista.forEach(nome => {
+
+let card = document.createElement("div")
+
+card.className = "card"
+
+card.innerHTML = `
+<h3>${nome}</h3>
+<p>Ver dados da startup</p>
+`
+
+container.appendChild(card)
+
+})
+
+}
+
+
+/* PESQUISA */
+
+document.getElementById("busca").addEventListener("input", function(){
+
+let termo = this.value.toLowerCase()
+
+let filtradas = todasStartups.filter(nome =>
+nome.toLowerCase().includes(termo)
+)
+
+mostrarStartups(filtradas)
+
+})
+
+</script>
+
+</body>
+</html>

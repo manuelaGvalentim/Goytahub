@@ -1124,6 +1124,19 @@ responsividade */
     text-decoration: underline;
 }
 
+.categoria-card{
+color:white;
+}
+
+.categoria-card h3{
+color:white;
+}
+
+.categoria-card .qtd{
+color:white;
+opacity:0.9;
+font-size:1.05em;
+}
 
 
 
@@ -1139,5 +1152,347 @@ responsividade */
 
 
 
+
+
+/* ======================
+CATEGORIAS DE STARTUPS
+====================== */
+body{
+
+font-family:Segoe UI,Arial,sans-serif;
+background:#f4f7fb;
+margin:0;
+padding:40px;
+
+}
+
+h1{
+
+text-align:center;
+color:#0a2a66;
+margin-bottom:40px;
+
+}
+
+.categorias-container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+.grid-categorias{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:linear-gradient(135deg,#1f4e79,#2c6fb1);
+
+border-radius:14px;
+
+padding:30px;
+
+text-align:center;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+transition:all .3s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.4),
+transparent
+);
+
+transition:.6s;
+
+}
+
+.card:hover::after{
+
+left:100%;
+
+}
+
+.card h3{
+
+color:white;
+font-size:1.5em;
+margin-bottom:15px;
+
+}
+
+.qtd{
+
+color:white;
+font-size:1.1em;
+margin-bottom:15px;
+
+}
+
+.link{
+
+color:white;
+font-size:.95em;
+opacity:.9;
+border-top:1px solid rgba(255,255,255,.3);
+padding-top:12px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LISTA DE STARTUPS */
+
+.lista-section{
+
+max-width:900px;
+
+margin:50px auto;
+
+padding:25px;
+
+background:white;
+
+border-radius:10px;
+
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+
+}
+
+.lista-section h1{
+
+text-align:center;
+
+color:#1f4e79;
+
+margin-bottom:20px;
+
+}
+
+/* barra de busca */
+
+.filter-bar{
+
+display:flex;
+
+gap:10px;
+
+margin-bottom:20px;
+
+}
+
+.filter-bar input{
+
+flex:1;
+
+padding:10px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+}
+
+.filter-bar button{
+
+background:#1f4e79;
+
+color:white;
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+.filter-bar button:hover{
+
+background:#163c5a;
+
+}
+
+/* tabela */
+
+.startups-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.startups-table th,
+.startups-table td{
+
+border:1px solid #dcdcdc;
+
+padding:12px;
+
+}
+
+.startups-table th{
+
+background:#1f4e79;
+
+color:white;
+
+}
+
+.startups-table tr:nth-child(even){
+
+background:#f4f7fb;
+
+}
+
+
+
+
+
+
+
+
+
+.parceiro-tec-canto{
+
+position:absolute;
+
+right:100px;
+
+top:210px; /* mesma altura aproximada dos botões */
+
+text-align:center;
+
+}
+
+.parceiro-tec-canto img{
+
+width:150px;
+
+height:auto;
+
+display:block;
+
+margin:auto;
+
+}
+
+.parceiro-tec-canto span{
+
+display:block;
+
+margin-top:2px;
+
+font-size:20px;
+
+color:#0a2a66;
+
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.icone-anuncio{
+
+width:25px;
+
+height:auto;
+
+margin-left:6px;
+
+vertical-align:middle;
+
+}
 
 
