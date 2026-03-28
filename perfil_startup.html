@@ -90,89 +90,129 @@
 
 
 
+<div class="perfil-container">
 
+<div class="perfil-header">
+<img id="logo" src="" alt="Logo da startup">
+<h1 id="nome">Nome da Startup</h1>
+</div>
 
-    <main id="main-content">
-        <section class="hero-section" aria-labelledby="hero-heading">
+<div class="perfil-grid">
 
+<div class="info-box full">
+<h3>Pitch</h3>
+<p id="pitch"></p>
+</div>
 
+<div class="info-box">
+<h3>Produto / Serviço</h3>
+<p id="produto"></p>
+</div>
 
+<div class="info-box">
+<h3>Estágio</h3>
+<p id="estagio"></p>
+</div>
 
+<div class="info-box">
+<h3>Colaboradores</h3>
+<p id="colaboradores"></p>
+</div>
 
+<div class="info-box">
+<h3>Localização</h3>
+<p id="localizacao"></p>
+</div>
 
-            <div class="hero-content">
-                <h2 id="hero-heading">Bem-vindo ao GOYTA HUB!</h2>
-                <p>Sua plataforma de conexão com o ecossistema de inovação e empreendedorismo.</p>
+<div class="info-box">
+<h3>Público-alvo</h3>
+<p id="publico"></p>
+</div>
 
+<div class="info-box">
+<h3>Fundador</h3>
+<p id="fundador"></p>
+</div>
 
-                <a href="cadastro-startup.html" class="btn btn-primary btn-startup">CADASTRE SUA STARTUP</a>
+<div class="info-box full">
+<h3>Presença Online</h3>
+<p id="links"></p>
+</div>
 
-<a href="cadastro-empresa.html" class="btn btn-primary btn-startup">CADASTRE SUA EMPRESA</a>
-            </div>
-
-
-
-
-
-
-
-<div class="parceiros-container">
-
-    <div class="parceiros-logos">
-        <img src="images/tec-imagem.png" alt="Tec Incubadora">
-        <img src="images/ise.png" class="logo-ise" alt="ISE">
-    </div>
-
-    <span class="parceiros-texto">Parceiros Goytahub</span>
+<div class="info-box full">
+<h3>Vídeo Pitch</h3>
+<div id="video" class="video-container"></div>
+</div>
 
 </div>
 
+<a class="voltar" href="javascript:history.back()">Voltar</a>
 
+</div>
 
+<script>
 
+const urlParams = new URLSearchParams(window.location.search)
+const nomeStartup = urlParams.get("nome")
 
+fetch("https://script.google.com/macros/s/AKfycbzpLWLnsVjoEcXLTo87c-PVYQsc4lU4M4ksv0Ux4i9jCeorEo3pEuAA4rEemtpjA3XJFw/exec")
+.then(res => res.json())
+.then(data => {
 
+let linhas = data.slice(1)
 
+linhas.forEach(linha => {
 
+let nome = linha[0]
 
+if(nome === nomeStartup){
 
+// 🔧 AJUSTE OS ÍNDICES CONFORME SUA PLANILHA
+let pitch = linha[2]
+let produto = linha[3]
+let estagio = linha[4]
+let colaboradores = linha[5]
+let estado = linha[6]
+let municipio = linha[7]
+let publico = linha[8]
+let fundador = linha[9]
+let site = linha[10]
+let linkedin = linha[11]
+let video = linha[12]
 
+// PREENCHER DADOS
 
-<br>
+document.getElementById("nome").innerText = nome
+document.getElementById("pitch").innerText = pitch || ""
+document.getElementById("produto").innerText = produto || ""
+document.getElementById("estagio").innerText = estagio || ""
+document.getElementById("colaboradores").innerText = colaboradores || ""
+document.getElementById("localizacao").innerText = (municipio && estado) ? municipio + " - " + estado : ""
+document.getElementById("publico").innerText = publico || ""
+document.getElementById("fundador").innerText = fundador || ""
 
+// LINKS
 
+let linksHTML = ""
+if(site) linksHTML += `<p>🌐 ${site}</p>`
+if(linkedin) linksHTML += `<p>💼 ${linkedin}</p>`
 
+document.getElementById("links").innerHTML = linksHTML
 
-            
-            <div class="video-presentation-container">
-                <h3>Conheça o GOYTA HUB</h3>
-                <div class="video-responsive">
-                    <iframe 
-                        width="560" height="315" 
-                        src="https://www.youtube.com/embed/4mzyxa52bSo" 
-                        title="Vídeo de Apresentação GOYTA HUB" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </section>
-        
-        <section id="sobre-preview" aria-labelledby="sobre-preview-heading">
-            <h3 id="sobre-preview-heading">Sobre Nós</h3>
-            <p>O GOYTA HUB é um catalisador de inovação, fomentando o desenvolvimento de startups e conectando talentos e oportunidades na região. <a href="sobre-institucional.html">Saiba mais...</a></p>
-        </section>
+// VÍDEO
 
-    </main>
+if(video){
+document.getElementById("video").innerHTML =
+`<iframe src="${video}" allowfullscreen></iframe>`
+}
 
-    <footer class="site-footer">
-        <p>&copy; <span id="current-year"></span> GOYTA HUB. Todos os direitos reservados.</p>
-    </footer>
+}
 
-    <script src="js/script.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+})
+
+})
+
+</script>
+
 </body>
 </html>

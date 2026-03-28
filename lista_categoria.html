@@ -270,7 +270,10 @@ text-decoration:none;
 
 
 
+
+
 <script>
+
 
 const urlParams = new URLSearchParams(window.location.search)
 const categoria = urlParams.get("categoria")
@@ -278,14 +281,10 @@ const categoria = urlParams.get("categoria")
 document.getElementById("tituloCategoria").innerText =
 "Startups - " + categoria
 
-
 let todasStartups = []
 
-
 fetch("https://script.google.com/macros/s/AKfycbzpLWLnsVjoEcXLTo87c-PVYQsc4lU4M4ksv0Ux4i9jCeorEo3pEuAA4rEemtpjA3XJFw/exec")
-
 .then(res => res.json())
-
 .then(data => {
 
 let linhas = data.slice(1)
@@ -296,9 +295,7 @@ let nome = linha[0]
 let cat = linha[1]
 
 if(cat && cat.toLowerCase() === categoria.toLowerCase()){
-
 todasStartups.push(nome)
-
 }
 
 })
@@ -306,7 +303,6 @@ todasStartups.push(nome)
 mostrarStartups(todasStartups)
 
 })
-
 
 function mostrarStartups(lista){
 
@@ -317,7 +313,6 @@ container.innerHTML = ""
 lista.forEach(nome => {
 
 let card = document.createElement("div")
-
 card.className = "card"
 
 card.innerHTML = `
@@ -325,12 +320,16 @@ card.innerHTML = `
 <p>Ver dados da startup</p>
 `
 
+// ✅ AQUI ESTÁ A NOVA FUNÇÃO (CLIQUE)
+card.addEventListener("click", () => {
+window.location.href = `perfil_startup.html?nome=${encodeURIComponent(nome)}`
+})
+
 container.appendChild(card)
 
 })
 
 }
-
 
 /* PESQUISA */
 
@@ -346,7 +345,9 @@ mostrarStartups(filtradas)
 
 })
 
+
 </script>
+
 
 </body>
 </html>
