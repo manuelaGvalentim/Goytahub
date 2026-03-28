@@ -1437,12 +1437,6 @@ background:#f4f7fb;
 
 
 
-
-.logo-ise{
-    width:20px; /* menor que a outra */
-    height:auto;
-}
-
 .parceiros-container{
     position:absolute;
     right:100px;
@@ -1469,6 +1463,11 @@ background:#f4f7fb;
     max-width:100%;
 }
 
+/* 🔥 deixa só a segunda imagem menor */
+.parceiros-logos img:last-child{
+    width:50px;
+}
+
 /* texto */
 .parceiros-texto{
     font-size:18px;
@@ -1489,6 +1488,11 @@ background:#f4f7fb;
         width:50px;
     }
 
+    /* mantém a segunda ainda menor */
+    .parceiros-logos img:last-child{
+        width:40px;
+    }
+
     .parceiros-texto{
         font-size:16px;
     }
@@ -1504,14 +1508,15 @@ background:#f4f7fb;
         width:40px;
     }
 
+    /* mantém proporção no mobile */
+    .parceiros-logos img:last-child{
+        width:30px;
+    }
+
     .parceiros-texto{
         font-size:14px;
     }
 }
-
-
-
-
 
 
 
