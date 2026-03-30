@@ -88,83 +88,13 @@
 
 
 
-    <main id="main-content">
-        <section class="hero-section" aria-labelledby="hero-heading">
 
 
 
 
 
 
-            <div class="hero-content">
-                <h2 id="hero-heading">Bem-vindo ao GOYTA HUB!</h2>
-                <p>Sua plataforma de conexão com o ecossistema de inovação e empreendedorismo.</p>
-
-
-                    <a href="escolher-empresa.html" class="btn btn-primary btn-startup">
-                    CADASTRE SUA EMPRESA
-                    </a>
-
-
-            </div>
-
-
-
-
-
-
-
-<div class="parceiros-container">
-
-    <div class="parceiros-logos">
-        <img src="images/tec-imagem.png" alt="Tec Incubadora">
-        <img src="images/ise.png" class="logo-ise" alt="ISE">
-    </div>
-
-    <span class="parceiros-texto">Parceiros Goytahub</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-
-
-
-
-            
-            <div class="video-presentation-container">
-                <h3>Conheça o GOYTA HUB</h3>
-                <div class="video-responsive">
-                    <iframe 
-                        width="560" height="315" 
-                        src="https://www.youtube.com/embed/4mzyxa52bSo" 
-                        title="Vídeo de Apresentação GOYTA HUB" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </section>
-        
-        <section id="sobre-preview" aria-labelledby="sobre-preview-heading">
-            <h3 id="sobre-preview-heading">Sobre Nós</h3>
-            <p>O GOYTA HUB é um catalisador de inovação, fomentando o desenvolvimento de startups e conectando talentos e oportunidades na região. <a href="sobre-institucional.html">Saiba mais...</a></p>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
+      <footer class="site-footer">
         <p>&copy; <span id="current-year"></span> GOYTA HUB. Todos os direitos reservados.</p>
     </footer>
 
@@ -174,3 +104,14 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
