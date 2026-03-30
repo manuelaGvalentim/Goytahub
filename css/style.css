@@ -42,7 +42,10 @@ a, button {
 /* Cabeçalho */
 .site-header {
     background-color: #ffffff;
-    padding: 15px 5%; /* Usar % para responsividade */
+   
+    width: 100%;
+    padding: 15px 20px; /* padding fixo, não em % */
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +54,12 @@ a, button {
     top: 0;
     z-index: 999; /* Para ficar acima do conteúdo */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.site-header {
+    width: 100vw;       /* força largura total da tela */
+    margin: 0;          /* remove qualquer margem externa */
+    left: 0;
 }
 
 .site-header .logo-container {
@@ -1448,6 +1457,7 @@ background:#f4f7fb;
     gap:8px;
 }
 
+
 /* logos lado a lado */
 .parceiros-logos{
     display:flex;
@@ -1810,6 +1820,38 @@ html, body {
     .site-header{
         width: 100%;
         padding: 12px 15px;
+    }
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+
+    .parceiros-container{
+        position: static;   /* remove o absolute */
+        margin: 20px auto;  /* centraliza */
+        right: auto;
+        top: auto;
     }
 
 }
