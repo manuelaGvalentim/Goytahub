@@ -1766,14 +1766,14 @@ box-shadow:0 8px 20px rgba(0,0,0,0.2);
 
 
 
-
-/* ===== AJUSTE BOTÕES MOBILE ===== */
+/* ===== AJUSTE BOTÕES MOBILE (CENTRALIZADOS E MENORES) ===== */
 @media (max-width: 768px){
 
     .btn-startup{
         display: block;
-        width: 100%;
-        margin-bottom: 15px; /* espaço entre os botões */
+        width: 80%;          /* diminui largura */
+        max-width: 320px;   /* limite bonito */
+        margin: 0 auto 15px auto; /* centraliza + espaçamento */
     }
 
     .btn-startup:last-child{
