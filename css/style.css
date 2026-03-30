@@ -1781,3 +1781,26 @@ box-shadow:0 8px 20px rgba(0,0,0,0.2);
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== CORREÇÃO MOBILE (EVITA DESLOCAMENTO) ===== */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Garante que tudo respeite a largura da tela */
+* {
+    box-sizing: border-box;
+}
