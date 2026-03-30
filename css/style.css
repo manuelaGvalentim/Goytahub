@@ -6,7 +6,12 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    padding-top: 80px; /* altura do header */
 }
+
+
+
+
 
 a, button {
     color: #00008B; /* Azul forte */
@@ -219,9 +224,8 @@ button.dropdown-toggle[aria-expanded="true"] > span::after {
     color: #00008B;
 }
 #main-content section {
-    margin-bottom: 40px;
-    padding-top: 60px; /* Espaço para o header fixo */
-    margin-top: -60px; /* Compensa o padding-top para ancoragem correta */
+    padding-top: 0;
+    margin-top: 0;
 }
 
 /* Rodapé */
@@ -2079,3 +2083,7 @@ body {
     }
 }
 
+
+.escolha-container {
+    margin-top: -100px;
+}
