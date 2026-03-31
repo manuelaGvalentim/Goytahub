@@ -2135,3 +2135,13 @@ body {
     }
 
 }
+
+
+
+
+
+@media (max-width: 768px){
+    .escolha-container{
+        padding-top: 80px;
+    }
+}
