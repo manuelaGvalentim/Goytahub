@@ -2111,3 +2111,27 @@ body {
     line-height: 1.5;
     color: #444;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+
+    .escolha-container h1{
+        font-size: 1.8em;   /* diminui o título */
+        margin-top: 40px;   /* empurra o título pra baixo */
+    }
+
+}
