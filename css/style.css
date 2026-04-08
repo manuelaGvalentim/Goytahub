@@ -1508,7 +1508,7 @@ background:#f4f7fb;
 }
 
 /* 🔥 deixa só a segunda imagem menor */
-.parceiros-logos img:last-child{
+.parceiros-logos img{
     width:50px;
 }
 
@@ -1533,7 +1533,7 @@ background:#f4f7fb;
     }
 
     /* mantém a segunda ainda menor */
-    .parceiros-logos img:last-child{
+    .parceiros-logos img{
         width:40px;
     }
 
@@ -1553,7 +1553,7 @@ background:#f4f7fb;
     }
 
     /* mantém proporção no mobile */
-    .parceiros-logos img:last-child{
+    .parceiros-logos img{
         width:30px;
     }
 
