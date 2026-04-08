@@ -1507,7 +1507,7 @@ background:#f4f7fb;
     max-width:100%;
 }
 
-/* 🔥 deixa só a segunda imagem menor */
+/* deixa só a segunda imagem menor */
 .parceiros-logos img{
     width:50px;
 }
@@ -1572,6 +1572,15 @@ background:#f4f7fb;
     }
 }
 
+@media (max-width: 768px){
+
+    .parceiros-logos img{
+        width:50px !important;
+        height:50px !important;
+        object-fit:contain;
+    }
+
+}
 
 
 
