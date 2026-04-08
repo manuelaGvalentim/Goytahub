@@ -1520,6 +1520,16 @@ background:#f4f7fb;
     text-align:center;
 }
 
+
+.parceiros-logos img:nth-child(1){
+    width: 70px;
+}
+
+.parceiros-logos img:nth-child(3){
+    width: 70px;
+}
+
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px){
 
