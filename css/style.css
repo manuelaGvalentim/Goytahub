@@ -1574,10 +1574,14 @@ background:#f4f7fb;
 
 @media (max-width: 768px){
 
-    .parceiros-logos img{
+    .parceiros-logos img,
+    .parceiros-logos img:nth-child(1),
+    .parceiros-logos img:nth-child(2),
+    .parceiros-logos img:nth-child(3)
+    .parceiros-logos img:nth-child(4){
         width:50px !important;
         height:50px !important;
-        object-fit:contain;
+        object-fit: contain;
     }
 
 }
