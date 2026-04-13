@@ -1530,6 +1530,10 @@ background:#f4f7fb;
 }
 
 
+.parceiros-logos img:nth-child(4){
+    width: 120px;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px){
 
@@ -1586,7 +1590,12 @@ background:#f4f7fb;
 
 }
 
-
+@media (max-width: 768px){
+    .parceiros-logos img:nth-child(4){
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
 
 
 
