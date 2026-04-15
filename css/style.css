@@ -580,14 +580,7 @@ document.addEventListener('DOMContentLoaded', function () {
     font-size: 1.5em;
 }
 
-.video-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%; /* Proporção 16:9 */
-    position: relative;
-    height: 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+
 
 .video-responsive iframe {
     left: 0;
