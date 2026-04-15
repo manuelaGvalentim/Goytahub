@@ -2244,3 +2244,59 @@ body {
         padding-top: 80px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTAINER DO VÍDEO */
+.video-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* VÍDEO ESTILO CELULAR */
+.video-celular{
+    width: 100%;
+    max-width: 400px; /* tamanho no desktop */
+
+    aspect-ratio: 9/16;
+    object-fit: cover;
+
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
+    background: transparent;
+}
+
+/*  TABLET */
+@media (max-width: 768px){
+
+    .video-celular{
+        max-width: 200px;
+    }
+
+}
+
+/* CELULAR */
+@media (max-width: 480px){
+
+    .video-celular{
+        max-width: 180px;
+    }
+
+}
