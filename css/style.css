@@ -2513,6 +2513,38 @@ HERO NOVA - VIDEO + TEXTO
 
         max-width:240px;
     }
+
+
+    
+
+
+
+.hero-video{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+
+.video-celular{
+
+    width:100%;
+
+    max-width:260px;
+
+    margin:0 auto;
+}
+
+
+
+
+
 }
 
 
@@ -2543,29 +2575,6 @@ HERO NOVA - VIDEO + TEXTO
 
 
 
-
-
-.hero-video{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-
-
-.video-celular{
-
-    width:100%;
-
-    max-width:260px;
-
-    margin:0 auto;
-}
 
 
 
