@@ -2471,6 +2471,16 @@ HERO NOVA - VIDEO + TEXTO
 
         max-width:280px;
     }
+
+
+
+
+
+
+
+
+
+    
 }
 
 /* CELULARES */
@@ -2530,6 +2540,34 @@ HERO NOVA - VIDEO + TEXTO
 
         white-space:nowrap;
     }
+
+
+
+
+
+.hero-video{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+
+.video-celular{
+
+    width:100%;
+
+    max-width:260px;
+
+    margin:0 auto;
+}
+
+
 
 }
 
