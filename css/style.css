@@ -2426,13 +2426,16 @@ HERO NOVA - VIDEO + TEXTO
         max-width:300px;
     }
 }
-
 /* TABLET */
 @media(max-width: 768px){
 
     .hero-section{
 
         flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
 
         gap:45px;
 
@@ -2445,43 +2448,72 @@ HERO NOVA - VIDEO + TEXTO
     .hero-texto{
 
         margin-top:0;
+
+        width:100%;
     }
 
     .hero-video{
+
+        display:flex;
+
         justify-content:center;
+
+        align-items:center;
+    }
+
+    .video-celular{
+
+        width:100%;
+
+        max-width:280px;
+
+        margin:0 auto;
+
+        display:block;
     }
 
     .hero-texto{
 
-        width:100%;
+        display:flex;
 
-        align-items:flex-start;
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
     }
 
     .hero-texto h1{
 
         font-size:2.8em;
 
-        text-align:left;
+        text-align:center;
 
         line-height:1.1;
     }
 
-    .video-celular{
+    .hero-texto .btn{
 
-        max-width:280px;
+        width:auto;
+
+        max-width:none;
+
+        padding:14px 28px;
+
+        font-size:0.95em;
+
+        white-space:nowrap;
     }
 
-
-
-
-
-
-
-
-
-    
 }
+
+
+
+
+
+
+
+
 
 /* CELULARES */
 @media(max-width: 480px){
@@ -2500,83 +2532,10 @@ HERO NOVA - VIDEO + TEXTO
         line-height:1.15;
     }
 
-    .hero-texto .btn{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:15px 20px;
-    }
-
     .video-celular{
 
         max-width:240px;
     }
-
-
-    
-
-
-
-.hero-video{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-
-
-.video-celular{
-
-    width:100%;
-
-    max-width:260px;
-
-    margin:0 auto;
-}
-
-
-
-
-
-}
-
-
-
-@media(max-width:768px){
-
-    .hero-texto{
-        align-items:center;
-        text-align:center;
-    }
-
-    .hero-texto h1{
-        text-align:center;
-    }
-
-    .hero-texto .btn{
-
-        width:auto;
-
-        max-width:none;
-
-        padding:14px 28px;
-
-        font-size:0.95em;
-
-        white-space:nowrap;
-    }
-
-
-
-
-
 
 }
 
