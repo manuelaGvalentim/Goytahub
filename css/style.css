@@ -2507,5 +2507,32 @@ HERO NOVA - VIDEO + TEXTO
 
 
 
+@media(max-width:768px){
+
+    .hero-texto{
+        align-items:center;
+        text-align:center;
+    }
+
+    .hero-texto h1{
+        text-align:center;
+    }
+
+    .hero-texto .btn{
+
+        width:auto;
+
+        max-width:none;
+
+        padding:14px 28px;
+
+        font-size:0.95em;
+
+        white-space:nowrap;
+    }
+
+}
+
+
 
 
