@@ -2269,12 +2269,9 @@ body {
 
 
 
-
-
-
 /*
 HERO NOVA - VIDEO + TEXTO
- */
+*/
 
 .hero-section{
 
@@ -2299,177 +2296,216 @@ HERO NOVA - VIDEO + TEXTO
 .hero-video{
     flex:1;
     display:flex;
-    justify-content:center;
+    justify-content:flex-end;
     align-items:center;
-}
 
+    margin-top:-250px;
+}
 
 .hero-video {
     margin-top: -400px;
 }
 
+
+/* VIDEO */
+.video-celular{
+
+    width:100%;
+    max-width:360px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.18),
+    0 10px 25px rgba(0,0,0,0.12);
+
+    transition:transform .4s ease;
+}
+
+.video-celular:hover{
+    transform:translateY(-6px);
+}
+
 /* TEXTO */
 .hero-texto{
+
     flex:1;
-    max-width:550px;
+
+    max-width:700px;
+
+    margin-top:-250px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+/* TÍTULO */
+.hero-texto h1{
+
+    font-size:5em;
+
+    line-height:1.05;
+
+    color:#0a2a66;
+
+    margin-bottom:35px;
+
+    font-weight:800;
+
+    text-align:left;
+
+    letter-spacing:-2px;
+
+    animation:fadeTexto 1s ease;
 }
 
 .hero-texto {
     margin-top: -400px;
 }
 
-.hero-texto h1{
-    font-size:4em;
-    line-height:1.1;
-    color:#0a2a66;
-
-    margin-bottom:35px;
-
-    font-weight:800;
-}
-
 /* BOTÃO */
 .hero-texto .btn{
+
     font-size:1.05em;
 
-    padding:15px 32px;
+    padding:16px 34px;
 
-    border-radius:8px;
+    border-radius:10px;
 
     letter-spacing:.5px;
+
+    animation:fadeTexto 1.2s ease;
+
+    transition:all .3s ease;
+}
+
+.hero-texto .btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.18);
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeTexto{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* RESPONSIVO */
-@media(max-width: 900px){
+@media(max-width: 1024px){
 
     .hero-section{
-        flex-direction:column;
-        text-align:center;
 
-        gap:40px;
+        gap:70px;
 
-        padding:50px 20px;
-    }
-
-    .hero-texto h1{
-        font-size:2.5em;
-    }
-
-    .video-celular{
-        max-width:260px;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-RESPONSIVIDADE MOBILE HERO
- */
-
-@media (max-width: 1024px){
-
-    .hero-section{
-        gap:50px;
         padding:60px 6%;
     }
 
+    .hero-video,
+    .hero-texto{
+        margin-top:-120px;
+    }
+
     .hero-texto h1{
-        font-size:3.2em;
+        font-size:3.8em;
     }
 
     .video-celular{
-        max-width:420px;
+        max-width:300px;
     }
-
 }
 
-
 /* TABLET */
-@media (max-width: 768px){
+@media(max-width: 768px){
 
     .hero-section{
+
         flex-direction:column;
 
-        text-align:center;
+        gap:45px;
 
-        gap:35px;
-
-        padding:50px 20px;
+        padding:60px 25px;
 
         min-height:auto;
     }
 
     .hero-video,
     .hero-texto{
-        width:100%;
+
+        margin-top:0;
+    }
+
+    .hero-video{
+        justify-content:center;
     }
 
     .hero-texto{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
+
+        width:100%;
+
+        align-items:flex-start;
     }
 
     .hero-texto h1{
-        font-size:2.3em;
 
-        line-height:1.2;
+        font-size:2.8em;
 
-        margin-bottom:25px;
+        text-align:left;
+
+        line-height:1.1;
     }
 
     .video-celular{
-        width:100%;
-        max-width:260px;
+
+        max-width:280px;
     }
-
-    .hero-texto .btn{
-        width:100%;
-        max-width:320px;
-
-        text-align:center;
-    }
-
 }
 
-
-/* CELULARES PEQUENOS */
-@media (max-width: 480px){
+/* CELULARES */
+@media(max-width: 480px){
 
     .hero-section{
-        padding:40px 15px;
+
+        padding:45px 18px;
+
+        gap:35px;
     }
 
     .hero-texto h1{
-        font-size:1.9em;
+
+        font-size:2.1em;
+
+        line-height:1.15;
     }
 
     .hero-texto .btn{
-        font-size:0.95em;
 
-        padding:14px 20px;
+        width:100%;
+
+        text-align:center;
+
+        padding:15px 20px;
     }
 
     .video-celular{
-        max-width:220px;
-    }
 
+        max-width:240px;
+    }
 }
+
+
+
+
+
