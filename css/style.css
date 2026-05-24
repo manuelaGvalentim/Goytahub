@@ -12,6 +12,27 @@ body {
 
 
 
+html{
+    font-size:100%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+img,
+video,
+iframe{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+
+
+
 
 a, button {
     color: #00008B; /* Azul forte */
@@ -62,11 +83,10 @@ a, button {
 }
 
 .site-header {
-    width: 100vw;       /* força largura total da tela */
-    margin: 0;          /* remove qualquer margem externa */
+    width: 100%;
+    margin: 0;
     left: 0;
 }
-
 .site-header .logo-container {
     display: flex;
     align-items: center;
@@ -1474,16 +1494,18 @@ background:#f4f7fb;
 
 
 .parceiros-container{
-    position:absolute;
-    right:100px;
-    top:210px;
+
+    position:relative;
+
+    margin-top:25px;
 
     display:flex;
     flex-direction:column;
+
     align-items:center;
+
     gap:8px;
 }
-
 
 /* logos lado a lado */
 .parceiros-logos{
@@ -2269,45 +2291,50 @@ body {
 
 
 
+
+
+
+
+
+
+
+
 /*
+====================================
 HERO NOVA - VIDEO + TEXTO
+====================================
 */
 
 .hero-section{
 
     display:flex;
+    justify-content:center;
+    align-items:center;
 
-    justify-content: space-between;
+    gap:60px;
 
-    align-items: flex-start;
-    
-    gap:80px;
-
-    padding:80px 8%;
+    padding:100px 5%;
 
     background:#eef2f7;
 
-    min-height:85vh;
-
     flex-wrap:wrap;
+
+    overflow:hidden;
 }
-
-/* VÍDEO */
-.hero-video{
-    flex:1;
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-
-    margin-top:-250px;
-}
-
-.hero-video {
-    margin-top: -400px;
-}
-
 
 /* VIDEO */
+
+.hero-video{
+
+    flex:1 1 350px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* VIDEO PLAYER */
+
 .video-celular{
 
     width:100%;
@@ -2315,230 +2342,215 @@ HERO NOVA - VIDEO + TEXTO
 
     border-radius:22px;
 
-    box-shadow:
-    0 25px 60px rgba(0,0,0,0.18),
-    0 10px 25px rgba(0,0,0,0.12);
+    height:auto;
 
-    transition:transform .4s ease;
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15),
+    0 8px 20px rgba(0,0,0,0.10);
+
+    transition:transform .3s ease;
 }
 
 .video-celular:hover{
-    transform:translateY(-6px);
+
+    transform:translateY(-5px);
 }
 
 /* TEXTO */
+
 .hero-texto{
 
-    flex:1;
+    flex:1 1 450px;
 
-    max-width:700px;
-
-    margin-top:-250px;
+    max-width:650px;
 
     display:flex;
-
     flex-direction:column;
 
     align-items:flex-start;
 }
 
-/* TÍTULO */
+/* TITULO */
+
 .hero-texto h1{
 
-    font-size:5em;
+    font-size:clamp(2.2rem,5vw,4.8rem);
 
-    line-height:1.05;
+    line-height:1.08;
 
     color:#0a2a66;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
     font-weight:800;
 
     text-align:left;
 
-    letter-spacing:-2px;
-
-    animation:fadeTexto 1s ease;
+    letter-spacing:-1px;
 }
 
-.hero-texto {
-    margin-top: -400px;
-}
+/* BOTAO */
 
-/* BOTÃO */
 .hero-texto .btn{
 
-    font-size:1.05em;
+    font-size:1rem;
 
-    padding:16px 34px;
+    padding:15px 28px;
 
     border-radius:10px;
 
-    letter-spacing:.5px;
-
-    animation:fadeTexto 1.2s ease;
+    white-space:nowrap;
 
     transition:all .3s ease;
 }
 
 .hero-texto .btn:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
-    box-shadow:0 12px 25px rgba(0,0,0,0.18);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-/* ANIMAÇÃO */
-@keyframes fadeTexto{
+/*
+====================================
+TABLET
+====================================
+*/
 
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* RESPONSIVO */
-@media(max-width: 1024px){
+@media(max-width:992px){
 
     .hero-section{
 
-        gap:70px;
+        gap:40px;
 
-        padding:60px 6%;
-    }
-
-    .hero-video,
-    .hero-texto{
-        margin-top:-120px;
+        padding:80px 5%;
     }
 
     .hero-texto h1{
-        font-size:3.8em;
+
+        font-size:clamp(2rem,6vw,3.8rem);
     }
 
     .video-celular{
-        max-width:300px;
+
+        max-width:320px;
     }
 }
-/* TABLET */
-@media(max-width: 768px){
+
+/*
+====================================
+MOBILE
+====================================
+*/
+
+@media(max-width:768px){
 
     .hero-section{
 
         flex-direction:column;
 
-        justify-content:center;
+        text-align:center;
 
-        align-items:center;
+        padding:60px 20px;
 
-        gap:45px;
-
-        padding:60px 25px;
-
-        min-height:auto;
+        gap:35px;
     }
 
     .hero-video,
     .hero-texto{
 
-        margin-top:0;
-
         width:100%;
-    }
-
-    .hero-video{
-
-        display:flex;
-
-        justify-content:center;
-
-        align-items:center;
-    }
-
-    .video-celular{
-
-        width:100%;
-
-        max-width:280px;
-
-        margin:0 auto;
-
-        display:block;
     }
 
     .hero-texto{
 
-        display:flex;
-
-        flex-direction:column;
-
         align-items:center;
-
-        text-align:center;
     }
 
     .hero-texto h1{
 
-        font-size:2.8em;
-
         text-align:center;
 
-        line-height:1.1;
+        font-size:2.5rem;
+
+        line-height:1.15;
     }
 
     .hero-texto .btn{
 
         width:auto;
 
-        max-width:none;
+        max-width:100%;
 
-        padding:14px 28px;
+        padding:13px 22px;
 
-        font-size:0.95em;
-
-        white-space:nowrap;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-/* CELULARES */
-@media(max-width: 480px){
-
-    .hero-section{
-
-        padding:45px 18px;
-
-        gap:35px;
-    }
-
-    .hero-texto h1{
-
-        font-size:2.1em;
-
-        line-height:1.15;
+        font-size:.95rem;
     }
 
     .video-celular{
 
-        max-width:240px;
+        max-width:280px;
+    }
+}
+
+/*
+====================================
+CELULARES PEQUENOS
+====================================
+*/
+
+@media(max-width:480px){
+
+    .hero-section{
+
+        padding:50px 15px;
     }
 
+    .hero-texto h1{
+
+        font-size:2rem;
+    }
+
+    .video-celular{
+
+        max-width:230px;
+    }
+
+    .hero-texto .btn{
+
+        font-size:.88rem;
+
+        padding:12px 18px;
+    }
 }
 
 
 
 
+
+
+
+
+
+
+
+/* =========================
+CORREÇÃO GERAL DE ZOOM
+========================= */
+
+body{
+    overflow-x:hidden;
+}
+
+.hero-section,
+.site-header,
+#main-content{
+    width:100%;
+    max-width:100%;
+}
+
+.hero-content,
+.hero-texto,
+.hero-video{
+    min-width:0;
+}
